@@ -169,8 +169,8 @@ export function NavbarClient({ session }: NavbarClientProps) {
               )}
             </div>
           ) : (
-            /* Sign In - Fixed 80px */
-            <div className="w-[80px]">
+            /* Sign In - Fixed 100px */
+            <div className="w-[100px]">
               <Button
                 variant="outline"
                 size="sm"
