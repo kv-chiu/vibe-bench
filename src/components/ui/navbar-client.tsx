@@ -1,7 +1,6 @@
 'use client';
 
-// use standard Link for logo? No, use i18n Link
-import { Link as I18nLink, usePathname, useRouter } from '@/i18n/routing';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { Button } from './button';
 import { FileCode2, Languages, ChevronDown, Check } from 'lucide-react';
 import { signIn, signOut } from '@/lib/auth-client';
@@ -52,7 +51,7 @@ export function NavbarClient({ session }: NavbarClientProps) {
     <nav className="bg-background/50 fixed top-0 right-0 left-0 z-50 border-b border-white/5 backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
         {/* Logo */}
-        <I18nLink href="/" className="group flex items-center gap-2">
+        <Link href="/" className="group flex items-center gap-2">
           <div className="bg-primary/20 border-primary/50 group-hover:shadow-glow-orange flex h-8 w-8 items-center justify-center rounded-lg border transition-all duration-300">
             <FileCode2 className="text-primary h-5 w-5" />
           </div>
@@ -60,12 +59,12 @@ export function NavbarClient({ session }: NavbarClientProps) {
             VibeBench
             <span className="text-primary">.ai</span>
           </span>
-        </I18nLink>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
-            <I18nLink
+            <Link
               key={item.href}
               href={item.href}
               className={cn(
@@ -74,7 +73,7 @@ export function NavbarClient({ session }: NavbarClientProps) {
               )}
             >
               {item.label}
-            </I18nLink>
+            </Link>
           ))}
         </div>
 
@@ -139,7 +138,7 @@ export function NavbarClient({ session }: NavbarClientProps) {
 
               {/* Dashboard - Fixed 100px */}
               <div className="w-[100px]">
-                <I18nLink href="/dashboard" className="block">
+                <Link href="/dashboard" className="block">
                   <Button
                     variant={pathname === '/dashboard' ? 'primary' : 'ghost'}
                     size="sm"
@@ -147,13 +146,13 @@ export function NavbarClient({ session }: NavbarClientProps) {
                   >
                     {t('dashboard')}
                   </Button>
-                </I18nLink>
+                </Link>
               </div>
 
               {/* Admin - Fixed 80px */}
               {session.user.role === 'ADMIN' && (
                 <div className="w-[80px]">
-                  <I18nLink href="/admin" className="block">
+                  <Link href="/admin" className="block">
                     <Button
                       variant={pathname === '/admin' ? 'primary' : 'ghost'}
                       size="sm"
@@ -164,7 +163,7 @@ export function NavbarClient({ session }: NavbarClientProps) {
                     >
                       {t('admin')}
                     </Button>
-                  </I18nLink>
+                  </Link>
                 </div>
               )}
             </div>

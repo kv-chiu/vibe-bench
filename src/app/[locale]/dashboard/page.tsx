@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import { Navbar } from '@/components/ui/navbar';
 import { Footer } from '@/components/ui/footer';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { FileIcon, ExternalLink, Clock, CheckCircle2, XCircle } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
