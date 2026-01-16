@@ -1,0 +1,22 @@
+title = "Gitleaks Configuration"
+
+[extend]
+# Use default gitleaks rules
+useDefault = true
+
+[allowlist]
+description = "Allowlist for known safe patterns"
+paths = [
+  '''\.env''',
+  '''\.env\..*''',
+  '''node_modules''',
+  '''\.next''',
+  '''pnpm-lock\.yaml''',
+  '''src/generated''',
+]
+# Allow example/placeholder secrets
+regexes = [
+  '''example\.com''',
+  '''localhost''',
+  '''127\.0\.0\.1''',
+]

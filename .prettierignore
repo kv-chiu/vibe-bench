@@ -1,0 +1,8 @@
+.next
+node_modules
+pnpm-lock.yaml
+*.log
+dist
+.vercel
+.env*
+src/generated

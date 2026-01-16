@@ -1,26 +1,87 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Colors */
+  --color-background: #030304; /* True Void */
+  --color-surface: #0f1115; /* Dark Matter */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: #f7931a; /* Bitcoin Orange */
+  --color-secondary: #ea580c; /* Burnt Orange */
+  --color-accent: #ffd600; /* Digital Gold */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-muted: #94a3b8; /* Stardust */
+  --color-border: #1e293b; /* Dim Boundary */
+
+  /* Fonts */
+  --font-heading: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+
+  /* Animations */
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-spin-slow: spin 10s linear infinite;
+  --animate-spin-reverse: spin 15s linear infinite reverse;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
 }
 
+:root {
+  --background: #030304;
+  --foreground: #ffffff;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  overflow-x: hidden; /* Prevent horizontal scroll from glowing elements */
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .bg-grid-pattern {
+    background-size: 50px 50px;
+    background-image:
+      linear-gradient(to right, rgba(30, 41, 59, 1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(30, 41, 59, 1) 1px, transparent 1px);
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    opacity: 0.15;
+  }
+
+  /* Bitcoin Orange Glow */
+  .shadow-glow-orange {
+    box-shadow: 0 0 20px -5px rgba(234, 88, 12, 0.5);
+  }
+
+  .shadow-glow-orange-intense {
+    box-shadow: 0 0 30px -5px rgba(247, 147, 26, 0.6);
+  }
+
+  .shadow-glow-gold {
+    box-shadow: 0 0 20px rgba(255, 214, 0, 0.3);
+  }
+
+  /* Text Gradients */
+  .text-gradient-bitcoin {
+    background: linear-gradient(to right, #f7931a, #ffd600);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-fire {
+    background: linear-gradient(to right, #ea580c, #f7931a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

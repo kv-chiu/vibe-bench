@@ -1,0 +1,162 @@
+// VibeBench - Prisma Schema
+// 众包AI编程工具测试平台
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ========== Benchmark（基准任务） ==========
+// 管理员发布，用于指导开发
+
+model Benchmark {
+  id             String       @id @default(cuid())
+  // 必填
+  title          String
+  // 可选内容
+  description    String?
+  requirementDoc String?      @db.Text
+  prototypeUrl   String?
+  userStories    String?      @db.Text
+  // 状态
+  isActive       Boolean      @default(true)
+  // 关联
+  submissions    Submission[]
+  createdBy      User         @relation(fields: [createdById], references: [id])
+  createdById    String
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@index([isActive])
+}
+
+// ========== Submission（用户提交） ==========
+
+model Submission {
+  id            String           @id @default(cuid())
+  // 关联 Benchmark（必选）
+  benchmark     Benchmark        @relation(fields: [benchmarkId], references: [id])
+  benchmarkId   String
+  // 必填：AI工具信息
+  baseModel     String
+  codingTool    String
+  plugins       String[]
+  // 必填：项目信息
+  repoUrl       String
+  // 交互记录（至少一种）
+  chatLogUrl    String?
+  chatLogText   String?          @db.Text
+  chatLogFiles  String[]
+  // 可选：提交者信息
+  authorName    String?
+  authorEmail   String?
+  // 用户关联
+  userId        String
+  user          User             @relation(fields: [userId], references: [id])
+  // 状态管理
+  status        SubmissionStatus @default(PENDING)
+  // 统计
+  likes         Like[]
+  likeCount     Int              @default(0)
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  @@index([benchmarkId])
+  @@index([status])
+}
+
+enum SubmissionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+// ========== User（管理员/用户） ==========
+
+model User {
+  id            String      @id @default(cuid())
+  email         String      @unique
+  name          String?
+  image         String?
+  emailVerified Boolean     @default(false)
+  role          Role        @default(USER)
+  benchmarks    Benchmark[]
+  submissions   Submission[]
+  sessions      Session[]
+  accounts      Account[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@map("user")
+}
+
+// ========== Like（点赞） ==========
+
+model Like {
+  id           String     @id @default(cuid())
+  submission   Submission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  submissionId String
+  fingerprint  String
+
+  createdAt DateTime @default(now())
+
+  @@unique([submissionId, fingerprint])
+  @@index([submissionId])
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
+}

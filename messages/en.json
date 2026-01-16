@@ -1,0 +1,126 @@
+{
+  "Navbar": {
+    "benchmarks": "Benchmarks",
+    "submissions": "Submissions",
+    "about": "About",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "signingOut": "Signing out..."
+  },
+  "HomePage": {
+    "title": "The Gold Standard for AI Code Generation Evaluation",
+    "subtitle": "Crowdsourced, real-world benchmarks for testing the capabilities of AI coding agents.",
+    "getStarted": "Get Started",
+    "viewBenchmarks": "View Benchmarks",
+    "howItWorks": "How it Works",
+    "featuresTitle": "Why VibeBench?",
+    "featuresSubtitle": "Designed for objective evaluation. Our methodology ensures transparency and reproducibility.",
+    "feature1Title": "Crowdsourced",
+    "feature1Desc": "Community-driven benchmarks reflecting real-world usage.",
+    "feature2Title": "Transparent",
+    "feature2Desc": "Open access to all prompts, evaluations, and results.",
+    "feature3Title": "Comprehensive",
+    "feature3Desc": "Covering a wide range of languages, frameworks, and tasks.",
+    "liveExecution": "Live Execution",
+    "liveExecutionDesc": "Code is executed in sandboxed environments to measure performance and resource usage.",
+    "multiModel": "Multi-Model",
+    "multiModelDesc": "Instantly compare Gemini, GPT-4, and Claude on identical prompts and contexts."
+  },
+  "BenchmarksPage": {
+    "title": "All Benchmarks",
+    "subtitle": "Standardized evaluation tasks for AI coding assistants. Select a benchmark to view submissions or submit your own.",
+    "searchPlaceholder": "Search protocols...",
+    "activeProtocol": "ACTIVE PROTOCOL",
+    "archived": "ARCHIVED",
+    "submissions": "Submissions",
+    "viewSpecs": "VIEW SPECS"
+  },
+  "BenchmarkDetailPage": {
+    "activeProtocol": "ACTIVE PROTOCOL",
+    "archived": "ARCHIVED",
+    "created": "Created",
+    "submissions": "Submissions",
+    "submitSolution": "Submit Solution",
+    "requirements": "Requirements",
+    "noSubmissions": "No submissions yet. Be the first to submit!"
+  },
+  "SubmissionsPage": {
+    "title": "All Submissions",
+    "subtitle": "Browse approved solutions from the community, sorted by latest.",
+    "viewDetails": "View Details",
+    "noSubmissions": "No submissions yet.",
+    "benchmark": "Benchmark",
+    "model": "Model",
+    "tool": "Tool",
+    "submittedBy": "Submitted by",
+    "submittedOn": "Submitted on",
+    "viewRepo": "View Repository",
+    "viewChatLog": "View Chat Log"
+  },
+  "SubmitSuccessPage": {
+    "title": "Submission Received!",
+    "message": "Thank you for your contribution. Your solution has been recorded and is currently pending review.",
+    "backToBenchmark": "Back to Benchmark",
+    "submitAnother": "Submit Another Solution"
+  },
+  "DashboardPage": {
+    "title": "My Submissions",
+    "subtitle": "Track the status of your benchmark solutions.",
+    "benchmark": "BENCHMARK",
+    "modelTool": "MODEL & TOOL",
+    "submitted": "SUBMITTED",
+    "status": "STATUS",
+    "resources": "RESOURCES",
+    "approved": "Approved",
+    "pending": "Pending",
+    "rejected": "Rejected"
+  },
+  "AdminPage": {
+    "title": "Admin Dashboard",
+    "subtitle": "Review pending submissions.",
+    "pending": "Pending",
+    "noPending": "All caught up! No pending submissions.",
+    "approve": "Approve",
+    "reject": "Reject",
+    "benchmarksTitle": "Manage Benchmarks",
+    "createBenchmark": "Create Benchmark",
+    "editBenchmark": "Edit Benchmark",
+    "benchmarkTitle": "Title",
+    "benchmarkDescription": "Description",
+    "requirementDoc": "Requirements Document (Markdown)",
+    "prototypeUrl": "Prototype URL",
+    "userStories": "User Stories",
+    "isActive": "Active",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this benchmark?"
+  },
+  "Footer": {
+    "copyright": "© 2026 VibeBench. The Gold Standard for AI Code Generation."
+  },
+  "AboutPage": {
+    "title": "About VibeBench",
+    "subtitle": "The open platform for evaluating AI coding assistants with real-world benchmarks.",
+    "missionTitle": "Our Mission",
+    "missionText": "VibeBench was created to provide a transparent, reproducible way to evaluate AI coding tools. We believe that the future of software development will be augmented by AI, and having reliable benchmarks is crucial for progress.",
+    "howItWorksTitle": "How It Works",
+    "step1Title": "Choose a Benchmark",
+    "step1Desc": "Browse our collection of standardized coding tasks designed to test different aspects of AI coding ability.",
+    "step2Title": "Submit Your Solution",
+    "step2Desc": "Use your preferred AI coding tool to complete the task, then submit your solution along with chat logs.",
+    "step3Title": "Get Evaluated",
+    "step3Desc": "Our team reviews submissions for accuracy, code quality, and adherence to specifications.",
+    "openSourceTitle": "Open Source",
+    "openSourceText": "VibeBench is fully open source. All prompts, evaluation criteria, and results are publicly available for transparency and reproducibility.",
+    "viewOnGitHub": "View on GitHub",
+    "getStarted": "Get Started"
+  },
+  "Common": {
+    "like": "Like",
+    "unlike": "Unlike",
+    "likes": "likes"
+  }
+}

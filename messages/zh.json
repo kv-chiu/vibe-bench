@@ -1,0 +1,126 @@
+{
+  "Navbar": {
+    "benchmarks": "基准测试",
+    "submissions": "提交展示",
+    "about": "关于",
+    "dashboard": "控制台",
+    "admin": "管理",
+    "signIn": "登录",
+    "signOut": "退出",
+    "signingOut": "退出中..."
+  },
+  "HomePage": {
+    "title": "AI 代码生成评估的黄金标准",
+    "subtitle": "众包的、真实的基准测试，用于测试 AI 编程代理的能力。",
+    "getStarted": "开始使用",
+    "viewBenchmarks": "查看基准",
+    "howItWorks": "了解更多",
+    "featuresTitle": "为什么选择 VibeBench?",
+    "featuresSubtitle": "专为客观评估设计。我们的方法确保透明性和可重复性。",
+    "feature1Title": "众包驱动",
+    "feature1Desc": "由社区驱动的基准，反映真实世界的使用场景。",
+    "feature2Title": "透明公开",
+    "feature2Desc": "完全公开所有提示词、评估标准和结果。",
+    "feature3Title": "全面覆盖",
+    "feature3Desc": "涵盖广泛的编程语言、框架和具体任务。",
+    "liveExecution": "实时执行",
+    "liveExecutionDesc": "代码在沙箱环境中执行，以测量性能和资源使用情况。",
+    "multiModel": "多模型",
+    "multiModelDesc": "在相同的提示和上下文中即时比较 Gemini、GPT-4 和 Claude。"
+  },
+  "BenchmarksPage": {
+    "title": "所有基准测试",
+    "subtitle": "面向 AI 编程助手的标准化评估任务。选择一个基准来查看提交或提交您自己的方案。",
+    "searchPlaceholder": "搜索协议...",
+    "activeProtocol": "活跃协议",
+    "archived": "已归档",
+    "submissions": "提交",
+    "viewSpecs": "查看规格"
+  },
+  "BenchmarkDetailPage": {
+    "activeProtocol": "活跃协议",
+    "archived": "已归档",
+    "created": "创建于",
+    "submissions": "提交数",
+    "submitSolution": "提交方案",
+    "requirements": "需求说明",
+    "noSubmissions": "暂无提交，成为第一个提交者！"
+  },
+  "SubmissionsPage": {
+    "title": "所有提交",
+    "subtitle": "浏览社区的已通过方案，按最新排序。",
+    "viewDetails": "查看详情",
+    "noSubmissions": "暂无提交。",
+    "benchmark": "基准测试",
+    "model": "模型",
+    "tool": "工具",
+    "submittedBy": "提交者",
+    "submittedOn": "提交于",
+    "viewRepo": "查看仓库",
+    "viewChatLog": "查看聊天记录"
+  },
+  "SubmitSuccessPage": {
+    "title": "提交成功！",
+    "message": "感谢您的贡献。您的方案已记录，目前正在等待审核。",
+    "backToBenchmark": "返回基准测试",
+    "submitAnother": "提交另一个方案"
+  },
+  "DashboardPage": {
+    "title": "我的提交",
+    "subtitle": "跟踪您的基准测试解决方案的状态。",
+    "benchmark": "基准测试",
+    "modelTool": "模型与工具",
+    "submitted": "提交时间",
+    "status": "状态",
+    "resources": "资源",
+    "approved": "已通过",
+    "pending": "待审核",
+    "rejected": "已拒绝"
+  },
+  "AdminPage": {
+    "title": "管理面板",
+    "subtitle": "审核待处理的提交。",
+    "pending": "待审核",
+    "noPending": "全部处理完毕！没有待审核的提交。",
+    "approve": "通过",
+    "reject": "拒绝",
+    "benchmarksTitle": "管理基准测试",
+    "createBenchmark": "创建基准测试",
+    "editBenchmark": "编辑基准测试",
+    "benchmarkTitle": "标题",
+    "benchmarkDescription": "描述",
+    "requirementDoc": "需求文档 (Markdown)",
+    "prototypeUrl": "原型 URL",
+    "userStories": "用户故事",
+    "isActive": "活跃",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "confirmDelete": "确定要删除这个基准测试吗？"
+  },
+  "Footer": {
+    "copyright": "© 2026 VibeBench. AI 代码生成的黄金标准。"
+  },
+  "AboutPage": {
+    "title": "关于 VibeBench",
+    "subtitle": "一个用于评估 AI 编程助手的开放平台，提供真实世界的基准测试。",
+    "missionTitle": "我们的使命",
+    "missionText": "VibeBench 旨在提供一种透明、可复现的方式来评估 AI 编程工具。我们相信软件开发的未来将由 AI 助力，而可靠的基准测试对于进步至关重要。",
+    "howItWorksTitle": "如何工作",
+    "step1Title": "选择基准测试",
+    "step1Desc": "浏览我们的标准化编程任务集，这些任务旨在测试 AI 编程能力的不同方面。",
+    "step2Title": "提交你的方案",
+    "step2Desc": "使用你喜欢的 AI 编程工具完成任务，然后提交你的方案和聊天记录。",
+    "step3Title": "获得评估",
+    "step3Desc": "我们的团队会审核提交的准确性、代码质量和对规范的遵守程度。",
+    "openSourceTitle": "开源",
+    "openSourceText": "VibeBench 完全开源。所有提示词、评估标准和结果都公开透明，以确保可复现性。",
+    "viewOnGitHub": "在 GitHub 上查看",
+    "getStarted": "开始使用"
+  },
+  "Common": {
+    "like": "点赞",
+    "unlike": "取消点赞",
+    "likes": "赞"
+  }
+}
